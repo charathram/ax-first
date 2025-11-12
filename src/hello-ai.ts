@@ -5,7 +5,11 @@ import { deserialize } from "./deserializer.js";
 
 const llm = ai({
   name: "azure-openai",
-  apiKey: process.env.AZURE_API_KEY!,
+  apiKey:
+    process.env.AZURE_API_KEY ??
+    (() => {
+      throw new Error("AZURE_API_KEY is not defined");
+    })(),
   deploymentName:
     process.env.AZURE_DEPLOYMENT ??
     (() => {
