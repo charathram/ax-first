@@ -15,5 +15,8 @@
     "@ax-llm/ax": "^14.0.39",
     "@types/node": "^24.10.0",
     "dotenv": "^17.2.3"
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
   }
 }

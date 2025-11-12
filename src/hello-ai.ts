@@ -1,7 +1,8 @@
 import { ai, ax } from "@ax-llm/ax";
 import "dotenv/config";
 import { sentimentObject } from "./sentimentObject.js";
-import { deserialize } from "./deserializer.js";
+import { deserializeWithZod } from "./deserializer-zod.js";
+import { sentimentObjectSchema } from "./sentimentObject-schema.js";
 
 const llm = ai({
   name: "azure-openai",
@@ -27,7 +28,7 @@ const llm = ai({
 
 const sentimentAnalyzer = ax(`
   reviewText: string "The text to be analyzed" ->
-  analysisResult: json "Analysis result containing the sentiment (positive/negative/neutral) and urgency (high/medium/low)"
+  analysisResult: json "Analysis result containing the sentiment (positive/negative/neutral) and urgency (low/medium/high)"
   `);
 
 async function analyze() {
@@ -40,7 +41,13 @@ async function analyze() {
     { stream: true },
   );
 
-  console.log(deserialize(result.analysisResult, sentimentObject));
+  console.log(
+    deserializeWithZod(
+      result.analysisResult,
+      sentimentObject,
+      sentimentObjectSchema,
+    ),
+  );
 }
 
 analyze();
