@@ -5,7 +5,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +16,8 @@
   "devDependencies": {
     "@ax-llm/ax": "^14.0.39",
     "@types/node": "^24.10.0",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "vitest": "^4.0.8"
   },
   "dependencies": {
     "zod": "^4.1.12"

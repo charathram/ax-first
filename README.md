@@ -127,6 +127,31 @@ Run the basic deserializer example:
 pnpx tsx src/deserializer-example.ts
 ```
 
+## Testing
+
+Run all tests:
+
+```bash
+pnpm test
+```
+
+Run tests in watch mode:
+
+```bash
+pnpm test:watch
+```
+
+Run tests with coverage:
+
+```bash
+pnpm test:coverage
+```
+
+The test suite includes comprehensive tests for:
+- **Basic deserializer** - Tests for `deserialize()` and `deserializeArray()`
+- **Zod deserializer** - Tests for `deserializeWithZod()`, `deserializeArrayWithZod()`, and `deserializeWithZodSafe()`
+- **Custom validator** - Tests for `deserializeWithValidation()` and the `SentimentObjectValidator` class
+
 ## TypeScript Configuration
 
 This project uses strict TypeScript settings including:
