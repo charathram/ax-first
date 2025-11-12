@@ -1,0 +1,19 @@
+{
+  "name": "ax-first",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.21.0",
+  "devDependencies": {
+    "@ax-llm/ax": "^14.0.39",
+    "@types/node": "^24.10.0",
+    "dotenv": "^17.2.3"
+  }
+}
